@@ -1,0 +1,5 @@
+root:x:0:root
+adm:x:4:yoda
+wheel:x:10:yoda
+uucp:x:14:yoda
+yoda:x:1000:
