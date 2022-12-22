@@ -43,15 +43,12 @@ jobs:
       - run: mkdir ../work; mkdir ../out;  mkarchiso -v -w ../work/ -o ../out/ ./
       - run: cp -r ../out /tmp/
       - run: cp -r ../out /tmp/out
-      - uses: actions/upload-artifact@v3
-        with:
-          name: YodaUsesArch Live ISO
-          path: /tmp/out/*.iso
+      - name: Publish New Release
       - uses: svenstaro/upload-release-action@v2
         with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          repo_token: ${{ secrets.RELEASE_TOKEN }}
           file: /tmp/out/*.iso
-          asset_name: mything
+          asset_name: yodalinux.iso
           tag: ${{ github.ref }}
           overwrite: true
           body: "Released the ISO, Yoda has"
