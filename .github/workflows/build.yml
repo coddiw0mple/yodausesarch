@@ -44,4 +44,4 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: YodaUsesArch Live ISO
-          path: /tmp/archlive/out/*.iso
+          path: ../out/*.iso
