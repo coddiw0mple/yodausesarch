@@ -41,7 +41,9 @@ jobs:
       - run: pacman --noconfirm -Sy archlinux-keyring
       - run: pacman -Sy; pacman --noconfirm -S git archiso
       - run: mkdir ../work; mkdir ../out;  mkarchiso -v -w ../work/ -o ../out/ ./
+      - run: cp -r ../out /tmp/
+      - run: cp -r ../out /tmp/out
       - uses: actions/upload-artifact@v3
         with:
           name: YodaUsesArch Live ISO
-          path: ../out/*.iso
+          path: /tmp/out/*.iso
