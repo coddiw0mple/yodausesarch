@@ -47,3 +47,11 @@ jobs:
         with:
           name: YodaUsesArch Live ISO
           path: /tmp/out/*.iso
+      - uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: /tmp/out/*.iso
+          asset_name: mything
+          tag: ${{ github.ref }}
+          overwrite: true
+          body: "Released the ISO, Yoda has"
