@@ -46,7 +46,7 @@ jobs:
       - name: Publish New Release
         uses: svenstaro/upload-release-action@v2
         with:
-          repo_token: ${{ secrets.RELEASE_TOKEN }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: /tmp/out/*.iso
           asset_name: yodalinux.iso
           tag: ${{ github.ref }}
