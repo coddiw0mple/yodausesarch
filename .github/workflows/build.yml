@@ -55,3 +55,4 @@ jobs:
           tag: ${{ github.ref }}
           overwrite: true
           body: "Released the ISO, Yoda has"
+          file_glob: true
