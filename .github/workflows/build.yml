@@ -44,7 +44,7 @@ jobs:
       - run: cp -r ../out /tmp/
       - run: cp -r ../out /tmp/out
       - name: Publish New Release
-      - uses: svenstaro/upload-release-action@v2
+        uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.RELEASE_TOKEN }}
           file: /tmp/out/*.iso
